@@ -38,8 +38,6 @@ Hardware:
 
 Software:
 
-## Required modules/SDKs on Raspberry Pi
-
 - Python3
 - Pip
 - AWS boto 3 client
@@ -66,12 +64,13 @@ Note: Register at least one known face with the AWS Face Rekognition service bef
 1. Push the button on the circuit (buzzer makes some noise ("Bell rings"), LCD panel informs that a photo needs to be taken and counts back from 3 to 1)
 2. Yellow LED = ON, Camera takes a picture and the script uploads the JPG to AWS S3 which triggers the cloud workflow to detect if the person is known and allowed to access or not
 3. Depending on the result of the rekognition workflow 
+
    Detection successful:
-   ---------------------
+
    -> Green LED = ON (door is opened), LCD Panel shows the name of the detected person, personal audio message is played on the speaker
    
    Detection unsuccessful:
-   -----------------------
+
    -> Red LED = ON (door keeps locked), LCD Panel informs about unsuccessful detection, default audio message for unknown persons is played on the speaker.
 
 ## Circuit
