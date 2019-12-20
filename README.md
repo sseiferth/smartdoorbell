@@ -209,7 +209,7 @@ python smartdoor.py -e <endpoint> -r <rootCAFilePath> -c <certFilePath> -k <priv
 ```
 ## AWS Cloud files
 
-Lambda function code (functions are created with AWS cloudformation):
+Lambda function code (functions are created by AWS cloudformation automatically with the stack):
 
 - LambdaGenerateVoiceMsgWithPolly.zip -> contains LambdaGenerateVoiceMsgWithPolly.py
 
