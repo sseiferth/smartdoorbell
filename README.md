@@ -20,14 +20,6 @@ AWS Services that are used:
 - AWS IoT Core
 - AWS Cloud Formation
 
-The door lock is simulated with 3 LEDs:
-
-Yellow - Active while face detection is ongoing
-Red - Active if the detected face is not registered/belonging to an unknown person (door keeps closed)
-Green -  Active if the detected face is from a registered/known person (door is opened)
-
-The LEDs can be easily replaced with a different circuit for a real door lock if required.
-
 ## Requirements
 
 Hardware:
@@ -71,11 +63,11 @@ Note: Register at least one known face with the AWS Face Rekognition service bef
 
    Detection successful:
 
-   -> Green LED = ON (door is opened), LCD Panel shows the name of the detected person, personal audio message is played on the speaker
+   -> Green LED = ON (simulates that door is opened), LCD Panel shows the name of the detected person, personal audio message is played on the speaker
    
    Detection unsuccessful:
 
-   -> Red LED = ON (door keeps locked), LCD Panel informs about unsuccessful detection, default audio message for unknown persons is played on the speaker.
+   -> Red LED = ON (simulates that door stays locked), LCD Panel informs about unsuccessful detection, default audio message for unknown persons is played on the speaker.
 
 ## Circuit
 
