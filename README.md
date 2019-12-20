@@ -41,7 +41,9 @@ Software:
 - Python3
 - Pip
 - AWS boto 3 client
-    ```pip install boto3```
+    ```Shell
+    pip install boto3
+    ```
 
 - AWS IoT Device SDK for Python
     ```Shell
