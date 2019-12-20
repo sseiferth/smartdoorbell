@@ -117,6 +117,7 @@ The script creates a file called "cloud_parameter.txt" that contains the details
 
 This script should be executed after cloud_init.py script. It creates a new IoT Thing in AWS IoT Core service with all necessary IoT policies and stores the corresponding client certificates on the Raspberry Pi.
 
+```Shell
 Parameter:
 
 -a, --accessKey
@@ -129,10 +130,11 @@ Parameter:
     AWS Region where the stack and the bucket shall be created, if not specified US-EAST-1 will be taken
 -h, --help
 	Help information
-
+```
+```Shell
 Usage:
 python create_thing.py -a <APIAccessKey> -s <APISecret> -r <AWSRegion> -n <ThingName>
-
+```
 Remark: If no region is specified, the AWS resources will be created in US-EAST-1 region.
 
 The script creates a file called "iot_parameter.txt" that contains the details for the AWS IoT resources that have been created. This file needs to be retained if you want to use the "delete_cloud.py" script later to automatically delete all IoT resources.
@@ -142,7 +144,7 @@ The script creates a file called "iot_parameter.txt" that contains the details f
 Deletes all AWS Cloud and IoT ressources.
 
 Requires that the script is executed from the directory that contains the parameter files that are created by "create_thing.py" and "cloud_init.py". 
-
+```Shell
 Parameter:
 
 -a, --accessKey
@@ -151,13 +153,14 @@ Parameter:
         AWS User Access Secret
 -h, --help
 	Help information
-
+```
+```Shell
 Usage: python delete_cloud.py -a <APIAccessKey> -s <APISecret>
-
+```
 ### smartdoor_new_face.py
 
 Registers a new person/face in AWS Rekognition. The person will be detected as known (or authorized) person when the smart door bell is used, which allows them to access the door.
-
+```Shell
 Parameter:
 
 -n, --name
@@ -171,14 +174,15 @@ Parameter:
 -h, --help
 	Help information
 
-
+```
+```Shell
 Usage:
 python smartdoor_new_face.py -n <name> -a <APIAccessKey> -s <APISecret> -b <Bucketname>
-
+```
 ### smartdoor.py
 
 This script implements the smart door bell service and interacts with the circuit and the AWS cloud/IoT ressources.
-
+```Shell
 Parameter:
 -e, --endpoint
 	Your AWS IoT custom endpoint
@@ -196,11 +200,12 @@ Parameter:
         S3 Bucketname that was provisioned for FaceRecognition Service
 -h, --help
 	Help information
-
+```
+```Shell
 Usage:
 
 python smartdoor.py -e <endpoint> -r <rootCAFilePath> -c <certFilePath> -k <privateKeyFilePath> -a <APIAccessKey> -s <APISecret> -b <Bucketname>
-
+```
 ## AWS Cloud files
 
 Lambda function code (functions are created with AWS cloudformation):
