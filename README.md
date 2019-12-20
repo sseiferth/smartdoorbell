@@ -1,11 +1,13 @@
-# Raspberry Pi Smart door lock project
+# Raspberry Pi Smart doorbell project
 ## Disclaimer
 
 The code for this project is inspired and based on: https://softwaremill.com/access-control-system-with-rfid-and-amazon-rekognition/
 
 ## Overview
 
-This project simulates a smart door lock. The samrt functions are face detection and playing an individual audio file for each known person (and a default audio message if the user is unknown). The service involves several AWS cloud services which can be provisioned with a Cloudformation template quickly.
+This little project simulates a smart doorbell. The smart functions are face detection when someone rings the bell and playing an individual audio file for each known person (and a default audio message if the user is unknown). The service involves several AWS cloud services which can be provisioned with a Cloudformation template quickly.
+
+I started with this project in order to play around with different AWS services, especially IoT, Cloudformation and Lambda in a simulated real world scenrario based on Raspberry Pi.
 
 AWS Services that are used:
 
@@ -18,7 +20,7 @@ AWS Services that are used:
 - AWS IoT Core
 - AWS Cloud Formation
 
-The door lock itself is simulated with 3 LEDs:
+The door lock is simulated with 3 LEDs:
 
 Yellow - Active while face detection is ongoing
 Red - Active if the detected face is not registered/belonging to an unknown person (door keeps closed)
